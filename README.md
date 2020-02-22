@@ -1,6 +1,6 @@
 # Basic Sorting
 ### Implementation of a few sorting algorithms in C. 
-</br>
+<br>
 
 Algorithms implemented:
 - Bubble Sort
@@ -10,7 +10,11 @@ Algorithms implemented:
 - Cocktail Sort
 - Quick Sort (single pivot)
 - Counting Sort
-</br>
+<br>
 
 Each function returns the number of comparisons, array   
 accesses and swaps the function realized while sorting.
+<br>
+
+I implemented this with the intention of learning more about C.
+<br>
