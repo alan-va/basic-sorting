@@ -5,14 +5,13 @@
  * 
  * Alem de definir:
  * 
- * 1. Tipo 'Contagem' e 'fcomparacao'.
- * 2. Constante 'erro'.
+ * 1. Tipos 'Contagem' e 'Fcomparacao'.
  * 
  * Exemplo de uso: (programa teste em testeOrdenamento.c)
  * 
  * size_t N = 10;
  * int numeros[N] = {0, 5, 1, 8, 11, 45, 2, 9, 22, 3};
- * fcomparacao modo[2] = {crescente, decrescente};
+ * Fcomparacao modo[2] = {crescente, decrescente};
  * Contagem resultado = {0, 0, 0};
  * 
  * resultado = quickSort(numeros, 0, 9, modo[0]);
@@ -31,6 +30,7 @@
  * - Cocktail Sort,
  * - Quick Sort,
  * - Counting Sort.
+ * - Slow Sort.
  * 
  * (!) Existem duas: bubbleSort e bubbleSortV2, a segunda
  *     eh melhor pois ela realiza menos acessos ao array.
@@ -56,24 +56,25 @@ typedef struct resultados
   long int qtdTrocas;
 } Contagem; // alias
 
-/* Tipo fcomparacao -> ponteiro para uma funcao 
+/* Tipo Fcomparacao -> ponteiro para uma funcao 
    booleana com dois argumentos const int. */
-typedef bool (*fcomparacao)(const int x, const int y);
+typedef bool (*Fcomparacao)(const int x, const int y);
 
 /* Funcoes de comparacao/modo de ordenamento. */
 bool decrescente(const int x, const int y);
 bool crescente(const int x, const int y);
 
 /* Funcoes de ordenamento */
-Contagem bubbleSort(int *valores, int limInf, int limSup, fcomparacao modo);
-Contagem bubbleSortV2(int *valores, int limInf, int limSup, fcomparacao modo);
-Contagem insertionSort(int *valores, int limInf, int limSup, fcomparacao modo);
-Contagem selectionSort(int *valores, int limInf, int limSup, fcomparacao modo);
-Contagem doubleSelectionSort(int *valores, int limInf, int limSup, fcomparacao modo);
-Contagem cocktailSort(int *valores, int limInf, int limSup, fcomparacao modo);
-Contagem quickSort(int *valores, int limInf, int limSup, fcomparacao modo);
+Contagem bubbleSort(int *valores, int limInf, int limSup, Fcomparacao modo);
+Contagem bubbleSortV2(int *valores, int limInf, int limSup, Fcomparacao modo);
+Contagem insertionSort(int *valores, int limInf, int limSup, Fcomparacao modo);
+Contagem selectionSort(int *valores, int limInf, int limSup, Fcomparacao modo);
+Contagem doubleSelectionSort(int *valores, int limInf, int limSup, Fcomparacao modo);
+Contagem cocktailSort(int *valores, int limInf, int limSup, Fcomparacao modo);
+Contagem quickSort(int *valores, int limInf, int limSup, Fcomparacao modo);
 Contagem countingSort(int *valores, int limInf, int limSup, int modo);
 /* CountingSort: modo 0 = crescente, modo 1 = decrescente, a funcao nao
    recebe uma funcao de comparacao pois nao realiza nenhuma comparacao. */
+Contagem slowSort(int *valores, int limInf, int limSup, Fcomparacao modo);
 
 #endif /* ordenamento.h */
