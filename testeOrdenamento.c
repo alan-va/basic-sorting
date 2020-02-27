@@ -11,7 +11,7 @@ void mostraArray(int *array, int tamanho);
 
 int main(void)
 {
-  fcomparacao f[2] = {crescente, decrescente};
+  const Fcomparacao f[2] = {crescente, decrescente};
   int *numeros, N, algoritmo, ordem;
   double tempoExec;
   time_t tic, tac;
@@ -75,9 +75,9 @@ int main(void)
       tic = clock();
       res1 = quickSort(numeros, 0, N-1, (*f[ordem-1]));
       tac = clock(); break;
-    //default:
-      //printf("\nEscolha invalida.\n");
-      //break;
+    default:
+      printf("\nEscolha invalida.\n");
+      break;
   }
 
   tempoExec = (double)(tac-tic) / CLOCKS_PER_SEC;
