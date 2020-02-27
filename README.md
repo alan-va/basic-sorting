@@ -12,8 +12,8 @@ Algorithms implemented:
 - Counting Sort
 <br>
 
-Each function returns the number of comparisons, array   
-accesses and swaps the function realized while sorting.
+Each function returns a struct containing the number of comparisons,  
+array accesses and swaps the function realized while sorting.
 <br>
 
 I implemented this with the intention of learning more about C.
